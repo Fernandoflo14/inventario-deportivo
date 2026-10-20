@@ -1,0 +1,7 @@
+.env
+**/bin/
+**/obj/
+.vs/
+evidencias/*
+!evidencias/.gitkeep
+!evidencias/README.md
