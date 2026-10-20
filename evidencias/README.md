@@ -1,8 +1,8 @@
-# Evidencias reales pendientes
+# Evidencias reales
 
-Ejecute scripts/iniciar.ps1 y revise que todas las pruebas sean exitosas. El script guarda resultados JSON, estado Docker, logs y grafo Git. Una salida fallida NO es evidencia de cumplimiento.
+La ejecución verificada completó 24 pruebas satisfactorias. Se incluyen resultados.json y docker-logs.txt; las capturas originales se encuentran en docs/capturas y dentro del informe PDF. Para reproducirlas, ejecute scripts/iniciar.ps1. El script guarda resultados JSON, estado Docker, logs y grafo Git. Una salida fallida NO es evidencia de cumplimiento.
 
-Capture adicionalmente para el PDF:
+Evidencias recomendadas para una demostración adicional:
 1. Docker Desktop con los tres servicios saludables.
 2. Swagger: POST de categoria y producto con 201 y JSON.
 3. Swagger: GET y PUT, mostrando datos actualizados.
