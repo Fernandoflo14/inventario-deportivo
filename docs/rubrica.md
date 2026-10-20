@@ -2,11 +2,11 @@
 
 | Criterio | Puntos | Implementación preparada | Verificación pendiente |
 |---|---:|---|---|
-| Negocio y C4 | 20 | Dominio y diagramas en docs | Incorporar diagramas renderizados al PDF |
-| Gateway | 25 | NGINX, proxy, CORS, logs JSON y límite | Ejecutar CORS, request ID y prueba 429 |
-| Backend y BD | 30 | .NET 8, dos CRUD, DTO, Repository, DI y EF Core | Build, pruebas HTTP y persistencia |
-| Docker Compose | 15 | Dos Dockerfiles, tres servicios, red, volumen y salud | Arranque con tres servicios saludables |
-| Git, README y Moodle | 10 | Features y merges reales, guía y pruebas | Release, repo público, PDF y entrega puntual |
+| Negocio y C4 | 20 | Dominio y diagramas renderizados en PDF | Revisar evaluación docente |
+| Gateway | 25 | Proxy, CORS, logs y límites; pruebas exitosas | Sin pendientes funcionales observados |
+| Backend y BD | 30 | .NET 8, CRUD, DTO, Repository, DI y persistencia comprobados | Sin pendientes funcionales observados |
+| Docker Compose | 15 | Dos Dockerfiles, tres servicios, red, volumen, salud y captura | Sin pendientes funcionales observados |
+| Git, README y Moodle | 10 | Historial, guía, PDF y release preparados | Publicación remota y entrega puntual |
 
 ## Estructura prevista del informe: 7 páginas
 1. Portada, autor, objetivo y problema del negocio.
