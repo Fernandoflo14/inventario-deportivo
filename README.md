@@ -125,7 +125,7 @@ docker compose up -d --wait
 El esquema se crea al primer arranque mediante `EnsureCreatedAsync`, apropiado para esta versión inicial. Cambios futuros de esquema requieren migraciones: este proyecto no mezcla EnsureCreated con EF Migrations.
 
 ## Git Flow y publicación
-`main` contiene la base del proyecto; `develop` integra el trabajo y las ramas `feature/backend-crud`, `feature/gateway-docker` y `feature/documentacion` conservan avances reales. **La release se finalizará después de la prueba real**, con rama `release/1.0.0`, merge a main, tag `v1.0.0` y retorno a develop.
+`main` contiene la base del proyecto; `develop` integra el trabajo y las ramas `feature/backend-crud`, `feature/gateway-docker` y `feature/documentacion` conservan avances reales. La rama `fix/validacion-dtos` registra la corrección detectada en las primeras pruebas. La rama `release/1.0.0` prepara la entrega después de la prueba real; falta completar el informe, merge a main, tag `v1.0.0` y retorno a develop.
 
 No use solo “Upload files” de GitHub: eso perdería el grafo local. Cree en GitHub un repositorio **público vacío**, sin README, licencia ni .gitignore iniciales. Luego, usando la URL real que GitHub muestre:
 ```powershell
@@ -147,4 +147,4 @@ Subir enlace público al repositorio e informe PDF de 5 a 8 páginas con descrip
 - Proveedor PostgreSQL EF Core: https://www.nuget.org/packages/Npgsql.EntityFrameworkCore.PostgreSQL/8.0.10
 
 ## Estado actual
-Código y documentación preparados. Pendientes: compilar/ejecutar en Docker, revisar pruebas, obtener capturas, cerrar release, generar PDF final, publicar repositorio y entregar en Moodle. No se incluyen resultados simulados ni se garantiza una calificación sin evaluar la ejecución.
+Código compilado y ejecutado mediante Docker en el equipo del autor. Las 24 comprobaciones de integración finalizaron correctamente, incluido rate limiting (68 respuestas 429 en 100 solicitudes concurrentes). Véase [docs/verificacion.md](docs/verificacion.md). Pendientes: capturas finales, PDF, cierre de release, repositorio público y entrega en Moodle.
