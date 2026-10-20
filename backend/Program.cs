@@ -30,7 +30,7 @@ app.Use(async (context, next) =>
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapGet("/", () => Results.Redirect("/swagger"));
-app.MapGet("/health", async (InventoryDb db, CancellationToken ct) =>
+app.MapGet("/health", async Task<IResult> (InventoryDb db, CancellationToken ct) =>
 {
     try
     {
