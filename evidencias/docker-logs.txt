@@ -1,0 +1,573 @@
+﻿backend-1  |           LIMIT @__p_0
+gateway-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+backend-1  |       ) AS t
+gateway-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+backend-1  |       ORDER BY t."Id"
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+gateway-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+db-1       | The files belonging to this database system will be owned by user "postgres".
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+db-1       | This user must also own the server process.
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+db-1       | 
+db-1       | The database cluster will be initialized with locale "en_US.utf8".
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+db-1       | The default database encoding has accordingly been set to "UTF8".
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+db-1       | The default text search configuration will be set to "english".
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+gateway-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+backend-1  |           FROM "Products" AS p
+gateway-1  | {"time":"2026-10-20T01:47:52+00:00","requestId":"da27b15a6150317cac9aa11e1578f21e","method":"GET","uri":"/health","status":200,"duration":0.039,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:47:53+00:00","requestId":"d8e25858c052cba26d339d2eabe0585f","method":"GET","uri":"/health","status":200,"duration":0.007,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |           ORDER BY p."Id"
+gateway-1  | {"time":"2026-10-20T01:47:53+00:00","requestId":"b51bb2bb3c4831c3761e85c7cade7958","method":"GET","uri":"/swagger/index.html","status":200,"duration":0.022,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:47:53+00:00","requestId":"d65c86fbeb61f762836f8803e4aa7cba","method":"GET","uri":"/swagger/v1/swagger.json","status":200,"duration":0.035,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |           LIMIT @__p_0
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:47:54+00:00","requestId":"7ec941549c79b18b5c2550397851fad8","method":"POST","uri":"/api/categories","status":400,"duration":0.078,"upstream":"172.19.0.3:8080","upstreamStatus":"400"}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | {"time":"2026-10-20T01:47:54+00:00","requestId":"3671c60f3a2de9355db20de59c2e2e52","method":"POST","uri":"/api/categories","status":201,"duration":0.143,"upstream":"172.19.0.3:8080","upstreamStatus":"201"}
+db-1       | 
+gateway-1  | {"time":"2026-10-20T01:47:54+00:00","requestId":"2cd54a1d0b513c097680eb993db5fd8e","method":"GET","uri":"/api/categories","status":200,"duration":0.091,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | Data page checksums are disabled.
+gateway-1  | {"time":"2026-10-20T01:47:55+00:00","requestId":"7edffa2f20c36e20378280a40a482be5","method":"GET","uri":"/api/categories/1","status":200,"duration":0.024,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       ORDER BY t."Id"
+gateway-1  | {"time":"2026-10-20T01:47:55+00:00","requestId":"5104393efe047444377e5f5f234937b0","method":"PUT","uri":"/api/categories/1","status":204,"duration":0.058,"upstream":"172.19.0.3:8080","upstreamStatus":"204"}
+gateway-1  | {"time":"2026-10-20T01:47:55+00:00","requestId":"d7a4bd859073a3a5533549bb06d86083","method":"POST","uri":"/api/products","status":201,"duration":0.077,"upstream":"172.19.0.3:8080","upstreamStatus":"201"}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | {"time":"2026-10-20T01:47:55+00:00","requestId":"370745188b34c384c98aab9ffccf4bc8","method":"GET","uri":"/api/products","status":200,"duration":0.034,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:47:56+00:00","requestId":"1fbeede035709cf064c3460ae733fe90","method":"GET","uri":"/api/products/1","status":200,"duration":0.013,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | {"time":"2026-10-20T01:47:56+00:00","requestId":"3069ada35afd153ccd09946078a8a4bc","method":"POST","uri":"/api/products","status":409,"duration":0.061,"upstream":"172.19.0.3:8080","upstreamStatus":"409"}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | {"time":"2026-10-20T01:47:56+00:00","requestId":"e8e7b98e34bc19f4d8e39bb8873730bb","method":"POST","uri":"/api/products","status":400,"duration":0.042,"upstream":"172.19.0.3:8080","upstreamStatus":"400"}
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | {"time":"2026-10-20T01:47:56+00:00","requestId":"354efc2f9f9a1b41245f6c545eecf5e4","method":"PUT","uri":"/api/products/1","status":204,"duration":0.050,"upstream":"172.19.0.3:8080","upstreamStatus":"204"}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.7514ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.0788ms
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.8778ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+db-1       | 
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+gateway-1  | {"time":"2026-10-20T01:47:56+00:00","requestId":"c08b572062bdcf948026412143d8ebbe","method":"GET","uri":"/api/products/1","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.1516ms
+db-1       | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+gateway-1  | {"time":"2026-10-20T01:47:57+00:00","requestId":"2a7ab41725762299451e53c29a3448b4","method":"DELETE","uri":"/api/categories/1","status":409,"duration":0.013,"upstream":"172.19.0.3:8080","upstreamStatus":"409"}
+gateway-1  | {"time":"2026-10-20T01:47:57+00:00","requestId":"4c71ba30745b8fcce980facebca029a2","method":"OPTIONS","uri":"/api/products","status":204,"duration":0.000,"upstream":"","upstreamStatus":""}
+db-1       | creating subdirectories ... ok
+db-1       | selecting dynamic shared memory implementation ... posix
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+db-1       | selecting default max_connections ... 100
+db-1       | selecting default shared_buffers ... 128MB
+db-1       | selecting default time zone ... UTC
+db-1       | creating configuration files ... ok
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+gateway-1  | {"time":"2026-10-20T01:47:57+00:00","requestId":"38b416f468052e3c2d7b62e9e3562538","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:47:58+00:00","requestId":"58dceef6ac1b56ab81907790f2bc20d0","method":"GET","uri":"/health","status":502,"duration":0.000,"upstream":"172.19.0.3:8080","upstreamStatus":"502"}
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+db-1       | running bootstrap script ... ok
+db-1       | sh: locale: not found
+db-1       | 2026-10-20 01:40:54.354 UTC [35] WARNING:  no usable system locales were found
+gateway-1  | 2026/10/20 01:47:58 [error] 30#30: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 172.19.0.1, server: , request: "GET /health HTTP/1.1", upstream: "http://172.19.0.3:8080/health", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:00+00:00","requestId":"4192b19c5b5f8028663590240406804a","method":"GET","uri":"/health","status":200,"duration":0.052,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+gateway-1  | {"time":"2026-10-20T01:48:00+00:00","requestId":"9236bda58b5ec0e6d410b6a432618d72","method":"GET","uri":"/api/products/1","status":200,"duration":0.210,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:00+00:00","requestId":"33d213e28c1c82ce9a1f68c87515399a","method":"DELETE","uri":"/api/products/1","status":204,"duration":0.053,"upstream":"172.19.0.3:8080","upstreamStatus":"204"}
+db-1       | performing post-bootstrap initialization ... ok
+gateway-1  | {"time":"2026-10-20T01:48:00+00:00","requestId":"d3b4116bcc1adf0145ac39c0545759df","method":"GET","uri":"/api/products/1","status":404,"duration":0.013,"upstream":"172.19.0.3:8080","upstreamStatus":"404"}
+db-1       | initdb: warning: enabling "trust" authentication for local connections
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"185f8ac49eaaa6a16b028dc9417d7e2d","method":"DELETE","uri":"/api/categories/1","status":204,"duration":0.012,"upstream":"172.19.0.3:8080","upstreamStatus":"204"}
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+db-1       | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1       | syncing data to disk ... ok
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+db-1       | 
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"7c8112625512953ccccab32a7af5b774","method":"GET","uri":"/api/categories/1","status":404,"duration":0.006,"upstream":"172.19.0.3:8080","upstreamStatus":"404"}
+db-1       | 
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"8f5484d308af5cbcca2e70035852426a","method":"GET","uri":"/api/products","status":200,"duration":0.017,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | Success. You can now start the database server using:
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"0fe4e25ea757a3de25dd1129afcc6089","method":"GET","uri":"/api/products","status":200,"duration":0.019,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"a98c5091b74d786249224f3cd27185d8","method":"GET","uri":"/api/products","status":200,"duration":0.018,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"616e61d0ef2821b645d23f4ecd58e6fb","method":"GET","uri":"/api/products","status":200,"duration":0.017,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"2907495b3fa15073417ee450a0ca08fd","method":"GET","uri":"/api/products","status":200,"duration":0.017,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+db-1       | 
+db-1       | waiting for server to start....2026-10-20 01:40:54.799 UTC [41] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+db-1       | 2026-10-20 01:40:54.800 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1       | 2026-10-20 01:40:54.803 UTC [44] LOG:  database system was shut down at 2026-10-20 01:40:54 UTC
+db-1       | 2026-10-20 01:40:54.806 UTC [41] LOG:  database system is ready to accept connections
+db-1       |  done
+db-1       | server started
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+db-1       | CREATE DATABASE
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+db-1       | 
+db-1       | 
+db-1       | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+db-1       | 
+db-1       | waiting for server to shut down....2026-10-20 01:40:54.941 UTC [41] LOG:  received fast shutdown request
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"cc020dd6a5952d440a5e41b9e70000d2","method":"GET","uri":"/api/products","status":200,"duration":0.018,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+db-1       | 2026-10-20 01:40:54.942 UTC [41] LOG:  aborting any active transactions
+db-1       | 2026-10-20 01:40:54.943 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+db-1       | 2026-10-20 01:40:54.944 UTC [42] LOG:  shutting down
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+db-1       | 2026-10-20 01:40:54.945 UTC [42] LOG:  checkpoint starting: shutdown immediate
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+db-1       | 2026-10-20 01:40:54.995 UTC [42] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.039 s, total=0.052 s; sync files=301, longest=0.002 s, average=0.001 s; distance=4272 kB, estimate=4272 kB; lsn=0/191E938, redo lsn=0/191E938
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+db-1       | 2026-10-20 01:40:54.998 UTC [41] LOG:  database system is shut down
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"ebdc5fb667cd8813cf6435f2b301db51","method":"GET","uri":"/api/products","status":200,"duration":0.018,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       |  done
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6064b8ab9355bb4f1416f3bd3ceee845","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"a84b238c3923d42fa188a978e6e5640f","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"74aec6ae6d81d597044984a66e426caa","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+db-1       | server stopped
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"00f242c77445afdead63cf464faad65e","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+db-1       | PostgreSQL init process complete; ready for start up.
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+db-1       | 
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"27302f6490c5da3fc2a75f7174aa67db","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"e415347905342d962d9f881b77134d04","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 2026-10-20 01:40:55.053 UTC [1] LOG:  starting PostgreSQL 16.14 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"14bf6d337ea1e018d70074b398bb09f5","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 2026-10-20 01:40:55.053 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"c8c0ca5b934f7506b702a9198e7b4a0c","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 2026-10-20 01:40:55.053 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"50bf07a08cbea8f844de92d0d12590cf","method":"GET","uri":"/api/products","status":200,"duration":0.002,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 2026-10-20 01:40:55.056 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"799b2d0ff03dafc45be5774a1e151f57","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"bd7a02efc65a064876ecb4f72a744f75","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+db-1       | 2026-10-20 01:40:55.059 UTC [57] LOG:  database system was shut down at 2026-10-20 01:40:54 UTC
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+db-1       | 2026-10-20 01:40:55.062 UTC [1] LOG:  database system is ready to accept connections
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+db-1       | 2026-10-20 01:45:55.143 UTC [55] LOG:  checkpoint starting: time
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+db-1       | 2026-10-20 01:46:05.115 UTC [55] LOG:  checkpoint complete: wrote 102 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.945 s, sync=0.017 s, total=9.973 s; sync files=58, longest=0.005 s, average=0.001 s; distance=463 kB, estimate=463 kB; lsn=0/1992910, redo lsn=0/19928D8
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+db-1       | 2026-10-20 01:47:56.360 UTC [724] ERROR:  duplicate key value violates unique constraint "IX_Products_Sku"
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"245a3f980f3b4d74349f5737456c8bf9","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"9fdda85078cae0d9ea9f0ed94ec8a9e3","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 2026-10-20 01:47:56.360 UTC [724] DETAIL:  Key ("Sku")=(BAL-09C2FFE9B2) already exists.
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+db-1       | 2026-10-20 01:47:56.360 UTC [724] STATEMENT:  INSERT INTO "Products" ("CategoryId", "Name", "Price", "Sku", "Stock")
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"7217c8ad45d0d3110acba1027374d1e4","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+db-1       | 	VALUES ($1, $2, $3, $4, $5)
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | 2026/10/20 01:48:01 [error] 41#41: *58 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 43#43: *64 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 39#39: *56 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 47#47: *75 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 46#46: *74 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 44#44: *68 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+db-1       | 	RETURNING "Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 43#43: *63 limiting requests, excess: 30.630 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+db-1       | 2026-10-20 01:47:57.134 UTC [724] ERROR:  update or delete on table "Categories" violates foreign key constraint "FK_Products_Categories_CategoryId" on table "Products"
+db-1       | 2026-10-20 01:47:57.134 UTC [724] DETAIL:  Key (Id)=(1) is still referenced from table "Products".
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"db63ba87aaf82675d0106469d12c37cd","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+db-1       | 2026-10-20 01:47:57.134 UTC [724] STATEMENT:  DELETE FROM "Categories"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"cc9bc5cbbf0181ebb3e581f4148ff11d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"cbc43a5e4b7c24bfba75b989f1d444c0","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+db-1       | 	WHERE "Id" = $1
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"7be9f70fd4cb572c4b453d7a4a7104f2","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6f90cb82298741a57a023d1805f613a1","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"b86f535fbb4accad9e19104e2ff7f49e","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"209df29770036864fe0dcb6db98503b9","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"507ce1826975fb09879d8a04b2395443","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"197cd30755965da602fe8cabec1da89c","method":"GET","uri":"/api/products","status":200,"duration":0.009,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"a85c121e9530087e4a5350bf8c4e4feb","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"db4cabd087491a8a2c8da68930cb1166","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"3325fb209306394c9e42d2602884893c","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"17e64eb5286ae1ddde7740bab9b9993f","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"73600558ad00784a1ffc02e42edb9e47","method":"GET","uri":"/api/products","status":200,"duration":0.004,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"c35980c287b8f62f84ff8b25315441b7","method":"GET","uri":"/api/products","status":200,"duration":0.004,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"e37067724cae0cdcbc81f6786dfa3a23","method":"GET","uri":"/api/products","status":200,"duration":0.009,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"012e3d145315c9e15094edc7d908a9a4","method":"GET","uri":"/api/products","status":200,"duration":0.009,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | 2026/10/20 01:48:01 [error] 48#48: *78 limiting requests, excess: 30.140 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6a64b651ef7b941688544d09345c25c9","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 49#49: *95 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"479bca1109d9ef4d03d26f46b75465da","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | 2026/10/20 01:48:01 [error] 50#50: *96 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"404c2ec98d03aa456cea00fb6228423c","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"ad885866a6ca6e93d772be3aee7639d1","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6e2a07e06148b1c54e5606958058ee1d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           ORDER BY p."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 51#51: *97 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 52#52: *98 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 53#53: *99 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           LIMIT @__p_0
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"91e9a56f4119b8a131a956f7ade9a4a3","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 54#54: *100 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       ORDER BY t."Id"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"fe76a3f729c6042f483599ce327ab1b2","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 55#55: *101 limiting requests, excess: 30.130 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"3c36af78fdb3788aaea029bae9986ef5","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | 2026/10/20 01:48:01 [error] 56#56: *102 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+gateway-1  | 2026/10/20 01:48:01 [error] 57#57: *103 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       FROM (
+gateway-1  | 2026/10/20 01:48:01 [error] 58#58: *104 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"c895476f68e599a3183f87e2b41cd582","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"d6b40125d800169c35659cc2dd194fcd","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"9b99ede64dd1f929f28756ec5ccc493d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 59#59: *105 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 60#60: *106 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"de9e7e13d0494a5d116e9a7bbaeb6091","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"90ddd2a4d7205701a1e03e0d445aac98","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | 2026/10/20 01:48:01 [error] 61#61: *107 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *108 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *109 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"3b1582312b2ab40ca1e28cb0fb705b20","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"beb99280047f4979803c302b6ba25b40","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"e430396489d7931d25e37a80f3edbde8","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *110 limiting requests, excess: 30.120 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"fc31fe2e045e2648c696f62d79b57703","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *111 limiting requests, excess: 30.110 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"de257ca2a23793df85f74d3825cdb03c","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *112 limiting requests, excess: 30.110 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *113 limiting requests, excess: 30.110 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *114 limiting requests, excess: 30.110 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *115 limiting requests, excess: 30.110 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 7.3922ms
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"bd0d1817c2bbde4066e6069dc2ba853f","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"5a6c87b9785aa4979f4ba923feb6daa0","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"31e186351bafb5125823317e90bb27ad","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"0410213c70390fbffae4cce6e4200a9a","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *118 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.9291ms
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"cfc344d12df30d6baf5e8f18568d2304","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *119 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"92ed0e4210edf439c8c32300729bab68","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *121 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"49bec87bbe4d58df5ababcfe06f47327","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"75530f0bcfa61cd2d65adfcd763234d1","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *120 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *122 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       FROM (
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"511f6e9e07416a218f6d7d259a175242","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *123 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *124 limiting requests, excess: 30.860 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6db7c62f6278239ce1e608ce0bf00d51","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"757d21145da0bc8117ca58eb5de81e5e","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"7489d19de57bafaf40cb9b5fc60d4f39","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           LIMIT @__p_0
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *125 limiting requests, excess: 30.850 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"99850ffdc6415bc60680cb9cbc063271","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *126 limiting requests, excess: 30.850 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"44e1bc87c80fa8bd11d4cc48c9616755","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 7.6431ms
+gateway-1  | 2026/10/20 01:48:01 [error] 31#31: *127 limiting requests, excess: 30.850 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *128 limiting requests, excess: 30.850 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"07dd6589d4f10f96c1665ea7548bbcc2","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           LIMIT @__p_0
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *129 limiting requests, excess: 30.850 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"b378c674b7847365ca617d4275b17e4f","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *130 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"8a830d58741711065ad0e61692acea2f","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"39cc1f412a0de460e3e5d531bc88d981","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *131 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"8675ecb0ceb5560cc780e45f4052660e","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ORDER BY t."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *132 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"0c8ec67098870881d4e9e03917d44463","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.3839ms
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *133 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *134 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6080819fcf05b9c173646d6a77b8bc0d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *135 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *136 limiting requests, excess: 30.840 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"1a5d8f99d472d5244496e6d6110d2123","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"575d12310b1519504e06a08f62e44c64","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *138 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"52f0bb06900edc974ad1ea9e117e82ac","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"e4049ef54c821a4fe9acd4ae8aaa6a34","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"595b5a37cab7e22b969197c1af1e21c0","method":"GET","uri":"/api/products","status":200,"duration":0.003,"upstream":"172.19.0.3:8080","upstreamStatus":"200"}
+gateway-1  | 2026/10/20 01:48:01 [error] 33#33: *137 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *139 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"836e3e21bfafb8d573455d157a5d261d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"33286f30402d78223752e42a84cfcdea","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"cfe137395ca2304685bcc81a2bac7510","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *140 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       FROM (
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *141 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+gateway-1  | 2026/10/20 01:48:01 [error] 33#33: *142 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           ORDER BY p."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *143 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           LIMIT @__p_0
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6acd70e080875bcc8d0e5e0da6993e9d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6b8b8bd45a69a4ca983d8d32c1c4323d","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *144 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.8921ms
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"ebc901f6276a626bb3f086b5d24766e3","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *145 limiting requests, excess: 30.830 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"37a742d54ed191899ccd8533d23dbecf","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           FROM "Products" AS p
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *146 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |           ORDER BY p."Id"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"d022929d444a0298ed164d98a287e962","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |           LIMIT @__p_0
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *147 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       ) AS t
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"aeaebcca8c015a4fda3ee830e746d847","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"91a7305474613a830dc7939a5d8dad08","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       ORDER BY t."Id"
+gateway-1  | 2026/10/20 01:48:01 [error] 30#30: *148 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"dcff339b29fb480eae9ee512698c5523","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *149 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+gateway-1  | 2026/10/20 01:48:01 [error] 33#33: *150 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.3395ms
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *151 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"87e94f098436b000e19c01c9b6be886a","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"f0dad3f3406cb6737014a260058b1303","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 33#33: *152 limiting requests, excess: 30.820 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"ebd2fc837385b616fffe927b70ebff97","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *153 limiting requests, excess: 30.810 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *154 limiting requests, excess: 30.810 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"e2ad2143968988496970c9d28b23cfdd","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"831c62aed5befcbb6be54f1fa5a42488","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"6754b015ea04bcaf5f8b184912ad47ee","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+gateway-1  | 2026/10/20 01:48:01 [error] 33#33: *155 limiting requests, excess: 30.810 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+gateway-1  | 2026/10/20 01:48:01 [error] 32#32: *156 limiting requests, excess: 30.810 by zone "api_limit", client: 172.19.0.1, server: , request: "GET /api/products HTTP/1.1", host: "localhost:8080"
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+gateway-1  | {"time":"2026-10-20T01:48:01+00:00","requestId":"3c060fb326e7cf9226d1add055293170","method":"GET","uri":"/api/products","status":429,"duration":0.000,"upstream":"","upstreamStatus":""}
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 2.3316ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 2.1476ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.8242ms
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.8621ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.7074ms
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.7747ms
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 2.7069ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.9331ms
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 2.8411ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 3.1423ms
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 8.229ms
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 7.8632ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 8.1347ms
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 8.6450ms
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+backend-1  |       Request starting HTTP/1.1 GET http://localhost:8080/api/products - - -
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+backend-1  |       Executing endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+backend-1  |       Route matched with {action = "List", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List(System.Threading.CancellationToken) on controller Inventario.Api.Controllers.ProductsController (Inventario.Api).
+backend-1  | info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+backend-1  |       Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+backend-1  |       SELECT t."Id", t."CategoryId", t."Name", t."Price", t."Sku", t."Stock", c."Id", c."Name"
+backend-1  |       FROM (
+backend-1  |           SELECT p."Id", p."CategoryId", p."Name", p."Price", p."Sku", p."Stock"
+backend-1  |           FROM "Products" AS p
+backend-1  |           ORDER BY p."Id"
+backend-1  |           LIMIT @__p_0
+backend-1  |       ) AS t
+backend-1  |       INNER JOIN "Categories" AS c ON t."CategoryId" = c."Id"
+backend-1  |       ORDER BY t."Id"
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+backend-1  |       Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Inventario.Api.Models.Product, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Inventario.Api.Contracts.ProductResponse, Inventario.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+backend-1  | info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+backend-1  |       Executed action Inventario.Api.Controllers.ProductsController.List (Inventario.Api) in 1.8709ms
+backend-1  | info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+backend-1  |       Executed endpoint 'Inventario.Api.Controllers.ProductsController.List (Inventario.Api)'
+backend-1  | info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+backend-1  |       Request finished HTTP/1.1 GET http://localhost:8080/api/products - 200 - application/json;+charset=utf-8 2.2615ms

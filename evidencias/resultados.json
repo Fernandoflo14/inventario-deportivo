@@ -1,0 +1,249 @@
+﻿[
+    {
+        "name":  "Salud de API y BD",
+        "method":  "GET",
+        "path":  "/health",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\"status\":\"healthy\",\"service\":\"inventory-api\"}",
+        "timestamp":  "2026-10-20T01:47:53.3636579Z"
+    },
+    {
+        "name":  "Swagger por Gateway",
+        "method":  "GET",
+        "path":  "/swagger/index.html",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "\u003c!-- HTML for static distribution bundle build --\u003e\n\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003ctitle\u003eSwagger UI\u003c/title\u003e\n    \u003clink rel=\"stylesheet\" type=\"text/css\" href=\"./swagger-ui.css\"\u003e\n    \u003clink rel=\"icon\" type=\"image/png\" href=\"./favicon-32x32.png\" sizes=\"32x32\" /\u003e\n    \u003clink rel=\"icon\" type=\"image/png\" href=\"./favicon-16x16.png\" sizes=\"16x16\" /\u003e\n    \u003cstyle\u003e\n\n        html {\n            box-sizing: border-box;\n            overflow: -moz-scrollbars-vertical;\n            overflow-y: scroll;\n        }\n\n        *,\n        *:before,\n        *:after {\n            box-sizing: inherit;\n        }\n\n        body {\n            margin: 0;\n            background: #fafafa;\n        }\n    \u003c/style\u003e\n    \n\u003c/head\u003e\n\n\u003cbody\u003e\n    \u003cdiv id=\"swagger-ui\"\u003e\u003c/div\u003e\n\n    \u003c!-- Workaround for https://github.com/swagger-api/swagger-editor/issues/1371 --\u003e\n    \u003cscript\u003e\n        if (window.navigator.userAgent.indexOf(\"Edge\") \u003e -1) {\n            console.log(\"Removing native Edge fetch in favor of swagger-ui\u0027s polyfill\")\n            window.fetch = undefined;\n        }\n    \u003c/script\u003e\n\n    \u003cscript src=\"./swagger-ui-bundle.js\"\u003e\u003c/script\u003e\n    \u003cscript src=\"./swagger-ui-standalone-preset.js\"\u003e\u003c/script\u003e\n    \u003cscript\u003e\n        /* Source: https://gist.github.com/lamberta/3768814\n         * Parse a string function definition and return a function object. Does not use eval.\n         * @param {string} str\n         * @return {function}\n         *\n         * Example:\n         *  var f = function (x, y) { return x * y; };\n         *  var g = parseFunction(f.toString());\n         *  g(33, 3); //=\u003e 99\n         */\n        function parseFunction(str) {\n            if (!str) return void (0);\n\n            var fn_body_idx = str.indexOf(\u0027{\u0027),\n                fn_body = str.substring(fn_body_idx + 1, str.lastIndexOf(\u0027}\u0027)),\n                fn_declare = str.substring(0, fn_body_idx),\n                fn_params = fn_declare.substring(fn_declare.indexOf(\u0027(\u0027) + 1, fn_declare.lastIndexOf(\u0027)\u0027)),\n                args = fn_params.split(\u0027,\u0027);\n\n            args.push(fn_body);\n\n            function Fn() {\n                return Function.apply(this, args);\n            }\n            Fn.prototype = Function.prototype;\n\n            return new Fn();\n        }\n\n        window.onload = function () {\n            var configObject = JSON.parse(\u0027{\"urls\":[{\"url\":\"v1/swagger.json\",\"name\":\"Inventario.Api v1\"}],\"deepLinking\":false,\"persistAuthorization\":false,\"displayOperationId\":false,\"defaultModelsExpandDepth\":1,\"defaultModelExpandDepth\":1,\"defaultModelRendering\":\"example\",\"displayRequestDuration\":false,\"docExpansion\":\"list\",\"showExtensions\":false,\"showCommonExtensions\":false,\"supportedSubmitMethods\":[\"get\",\"put\",\"post\",\"delete\",\"options\",\"head\",\"patch\",\"trace\"],\"tryItOutEnabled\":false}\u0027);\n            var oauthConfigObject = JSON.parse(\u0027{\"scopeSeparator\":\" \",\"scopes\":[],\"useBasicAuthenticationWithAccessCodeGrant\":false,\"usePkceWithAuthorizationCodeGrant\":false}\u0027);\n\n            // Workaround for https://github.com/swagger-api/swagger-ui/issues/5945\n            configObject.urls.forEach(function (item) {\n                if (item.url.startsWith(\"http\") || item.url.startsWith(\"/\")) return;\n                item.url = window.location.href.replace(\"index.html\", item.url).split(\u0027#\u0027)[0];\n            });\n\n            // If validatorUrl is not explicitly provided, disable the feature by setting to null\n            if (!configObject.hasOwnProperty(\"validatorUrl\"))\n                configObject.validatorUrl = null\n\n            // If oauth2RedirectUrl isn\u0027t specified, use the built-in default\n            if (!configObject.hasOwnProperty(\"oauth2RedirectUrl\"))\n                configObject.oauth2RedirectUrl = (new URL(\"oauth2-redirect.html\", window.location.href)).href;\n\n            // Apply mandatory parameters\n            configObject.dom_id = \"#swagger-ui\";\n            configObject.presets = [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset];\n            configObject.layout = \"StandaloneLayout\";\n\n            // Parse and add interceptor functions\n            var interceptors = JSON.parse(\u0027{}\u0027);\n            if (interceptors.RequestInterceptorFunction)\n                configObject.requestInterceptor = parseFunction(interceptors.RequestInterceptorFunction);\n            if (interceptors.ResponseInterceptorFunction)\n                configObject.responseInterceptor = parseFunction(interceptors.ResponseInterceptorFunction);\n\n            // Begin Swagger UI call region\n\n            const ui = SwaggerUIBundle(configObject);\n\n            ui.initOAuth(oauthConfigObject);\n\n            // End Swagger UI call region\n\n            window.ui = ui\n        }\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n",
+        "timestamp":  "2026-10-20T01:47:53.5611757Z"
+    },
+    {
+        "name":  "Documento OpenAPI",
+        "method":  "GET",
+        "path":  "/swagger/v1/swagger.json",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\n  \"openapi\": \"3.0.1\",\n  \"info\": {\n    \"title\": \"Inventario.Api\",\n    \"version\": \"1.0\"\n  },\n  \"paths\": {\n    \"/api/categories\": {\n      \"get\": {\n        \"tags\": [\n          \"Categories\"\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"post\": {\n        \"tags\": [\n          \"Categories\"\n        ],\n        \"requestBody\": {\n          \"content\": {\n            \"application/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            },\n            \"text/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            },\n            \"application/*+json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            }\n          }\n        },\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    },\n    \"/api/categories/{id}\": {\n      \"get\": {\n        \"tags\": [\n          \"Categories\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"put\": {\n        \"tags\": [\n          \"Categories\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"requestBody\": {\n          \"content\": {\n            \"application/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            },\n            \"text/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            },\n            \"application/*+json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/CategoryRequest\"\n              }\n            }\n          }\n        },\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"delete\": {\n        \"tags\": [\n          \"Categories\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    },\n    \"/\": {\n      \"get\": {\n        \"tags\": [\n          \"Inventario.Api\"\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    },\n    \"/health\": {\n      \"get\": {\n        \"tags\": [\n          \"Inventario.Api\"\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    },\n    \"/api/products\": {\n      \"get\": {\n        \"tags\": [\n          \"Products\"\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"post\": {\n        \"tags\": [\n          \"Products\"\n        ],\n        \"requestBody\": {\n          \"content\": {\n            \"application/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            },\n            \"text/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            },\n            \"application/*+json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            }\n          }\n        },\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    },\n    \"/api/products/{id}\": {\n      \"get\": {\n        \"tags\": [\n          \"Products\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"put\": {\n        \"tags\": [\n          \"Products\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"requestBody\": {\n          \"content\": {\n            \"application/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            },\n            \"text/json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            },\n            \"application/*+json\": {\n              \"schema\": {\n                \"$ref\": \"#/components/schemas/ProductRequest\"\n              }\n            }\n          }\n        },\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      },\n      \"delete\": {\n        \"tags\": [\n          \"Products\"\n        ],\n        \"parameters\": [\n          {\n            \"name\": \"id\",\n            \"in\": \"path\",\n            \"required\": true,\n            \"schema\": {\n              \"type\": \"integer\",\n              \"format\": \"int32\"\n            }\n          }\n        ],\n        \"responses\": {\n          \"200\": {\n            \"description\": \"OK\"\n          }\n        }\n      }\n    }\n  },\n  \"components\": {\n    \"schemas\": {\n      \"CategoryRequest\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"name\": {\n            \"type\": \"string\",\n            \"nullable\": true\n          }\n        },\n        \"additionalProperties\": false\n      },\n      \"ProductRequest\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"name\": {\n            \"type\": \"string\",\n            \"nullable\": true\n          },\n          \"sku\": {\n            \"type\": \"string\",\n            \"nullable\": true\n          },\n          \"price\": {\n            \"type\": \"number\",\n            \"format\": \"double\"\n          },\n          \"stock\": {\n            \"type\": \"integer\",\n            \"format\": \"int32\"\n          },\n          \"categoryId\": {\n            \"type\": \"integer\",\n            \"format\": \"int32\"\n          }\n        },\n        \"additionalProperties\": false\n      }\n    }\n  }\n}",
+        "timestamp":  "2026-10-20T01:47:53.7594486Z"
+    },
+    {
+        "name":  "Validacion categoria vacia",
+        "method":  "POST",
+        "path":  "/api/categories",
+        "expected":  400,
+        "actual":  400,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:47:54.0220494Z"
+    },
+    {
+        "name":  "Crear categoria",
+        "method":  "POST",
+        "path":  "/api/categories",
+        "expected":  201,
+        "actual":  201,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Prueba-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:47:54.6227315Z"
+    },
+    {
+        "name":  "Listar categorias",
+        "method":  "GET",
+        "path":  "/api/categories",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "[{\"id\":1,\"name\":\"Prueba-09c2ffe9b2\"}]",
+        "timestamp":  "2026-10-20T01:47:54.9417323Z"
+    },
+    {
+        "name":  "Consultar categoria",
+        "method":  "GET",
+        "path":  "/api/categories/1",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Prueba-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:47:55.1370662Z"
+    },
+    {
+        "name":  "Editar categoria",
+        "method":  "PUT",
+        "path":  "/api/categories/1",
+        "expected":  204,
+        "actual":  204,
+        "passed":  true,
+        "body":  [
+
+                 ],
+        "timestamp":  "2026-10-20T01:47:55.5222958Z"
+    },
+    {
+        "name":  "Crear producto",
+        "method":  "POST",
+        "path":  "/api/products",
+        "expected":  201,
+        "actual":  201,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.5,\"stock\":12,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:47:55.7650788Z"
+    },
+    {
+        "name":  "Listar productos",
+        "method":  "GET",
+        "path":  "/api/products",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "[{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.50,\"stock\":12,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}]",
+        "timestamp":  "2026-10-20T01:47:55.9685300Z"
+    },
+    {
+        "name":  "Consultar producto",
+        "method":  "GET",
+        "path":  "/api/products/1",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.50,\"stock\":12,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:47:56.1503095Z"
+    },
+    {
+        "name":  "Bloquear SKU duplicado",
+        "method":  "POST",
+        "path":  "/api/products",
+        "expected":  409,
+        "actual":  409,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:47:56.3757375Z"
+    },
+    {
+        "name":  "Rechazar stock negativo",
+        "method":  "POST",
+        "path":  "/api/products",
+        "expected":  400,
+        "actual":  400,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:47:56.5748574Z"
+    },
+    {
+        "name":  "Editar producto",
+        "method":  "PUT",
+        "path":  "/api/products/1",
+        "expected":  204,
+        "actual":  204,
+        "passed":  true,
+        "body":  [
+
+                 ],
+        "timestamp":  "2026-10-20T01:47:56.7890941Z"
+    },
+    {
+        "name":  "Comprobar actualizacion",
+        "method":  "GET",
+        "path":  "/api/products/1",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.50,\"stock\":20,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:47:56.9674806Z"
+    },
+    {
+        "name":  "Bloquear categoria con productos",
+        "method":  "DELETE",
+        "path":  "/api/categories/1",
+        "expected":  409,
+        "actual":  409,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:47:57.1373070Z"
+    },
+    {
+        "name":  "Preflight CORS",
+        "method":  "OPTIONS",
+        "path":  "/api/products",
+        "expected":  204,
+        "actual":  204,
+        "passed":  true,
+        "body":  [
+
+                 ],
+        "timestamp":  "2026-10-20T01:47:57.2971266Z"
+    },
+    {
+        "name":  "Identificador de peticion",
+        "method":  "GET",
+        "path":  "/api/products",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "[{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.50,\"stock\":20,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}]",
+        "timestamp":  "2026-10-20T01:47:57.4744684Z"
+    },
+    {
+        "name":  "Persistencia tras reinicio",
+        "method":  "GET",
+        "path":  "/api/products/1",
+        "expected":  200,
+        "actual":  200,
+        "passed":  true,
+        "body":  "{\"id\":1,\"name\":\"Balon de entrenamiento\",\"sku\":\"BAL-09C2FFE9B2\",\"price\":75.50,\"stock\":20,\"categoryId\":1,\"categoryName\":\"Material-09c2ffe9b2\"}",
+        "timestamp":  "2026-10-20T01:48:00.4698479Z"
+    },
+    {
+        "name":  "Eliminar producto",
+        "method":  "DELETE",
+        "path":  "/api/products/1",
+        "expected":  204,
+        "actual":  204,
+        "passed":  true,
+        "body":  [
+
+                 ],
+        "timestamp":  "2026-10-20T01:48:00.6872931Z"
+    },
+    {
+        "name":  "Producto eliminado",
+        "method":  "GET",
+        "path":  "/api/products/1",
+        "expected":  404,
+        "actual":  404,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:48:00.8611577Z"
+    },
+    {
+        "name":  "Eliminar categoria",
+        "method":  "DELETE",
+        "path":  "/api/categories/1",
+        "expected":  204,
+        "actual":  204,
+        "passed":  true,
+        "body":  [
+
+                 ],
+        "timestamp":  "2026-10-20T01:48:01.0422060Z"
+    },
+    {
+        "name":  "Categoria eliminada",
+        "method":  "GET",
+        "path":  "/api/categories/1",
+        "expected":  404,
+        "actual":  404,
+        "passed":  true,
+        "body":  null,
+        "timestamp":  "2026-10-20T01:48:01.2145203Z"
+    },
+    {
+        "name":  "Rate limiting concurrente",
+        "expected":  "Al menos un 429",
+        "actual":  68,
+        "passed":  true,
+        "timestamp":  "2026-10-20T01:48:01.5060670Z"
+    }
+]
