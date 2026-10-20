@@ -31,6 +31,7 @@ try {
     $null = Check 'Salud de API y BD' GET /health 200
     $null = Check 'Swagger por Gateway' GET /swagger/index.html 200
     $null = Check 'Documento OpenAPI' GET /swagger/v1/swagger.json 200
+    $null = Check 'Validacion categoria vacia' POST /api/categories 400 @{name=''}
     $unique = [Guid]::NewGuid().ToString('N').Substring(0,10)
     $cat = (Check 'Crear categoria' POST /api/categories 201 @{name="Prueba-$unique"}).Content | ConvertFrom-Json
     $null = Check 'Listar categorias' GET /api/categories 200
