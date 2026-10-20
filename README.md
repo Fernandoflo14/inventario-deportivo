@@ -7,7 +7,14 @@ Sistema para administrar categorías y productos de un club deportivo. El Gatewa
 ## Requisitos y arranque
 Docker Desktop iniciado en modo Linux, Docker Compose v2 o posterior y Git. No requiere SDK .NET ni PostgreSQL instalados en el host. Se requiere Internet durante el primer build.
 
-Clone el repositorio desde el botón **Code > HTTPS** de su página pública y entre a la carpeta clonada. Para la copia local actual:
+Clone el repositorio y entre a la carpeta:
+
+```bash
+git clone https://github.com/Fernandoflo14/inventario-deportivo.git
+cd inventario-deportivo
+```
+
+Para la copia local actual:
 
 ```powershell
 Set-Location 'C:\Users\ROGSTRIX G18\Documents\Codex\2026-10-19\te-voy-a-pasar-un-trabajo\inventario-deportivo'
@@ -125,7 +132,7 @@ docker compose up -d --wait
 El esquema se crea al primer arranque mediante `EnsureCreatedAsync`, apropiado para esta versión inicial. Cambios futuros de esquema requieren migraciones: este proyecto no mezcla EnsureCreated con EF Migrations.
 
 ## Git Flow y publicación
-`main` contiene la base del proyecto; `develop` integra el trabajo y las ramas `feature/backend-crud`, `feature/gateway-docker` y `feature/documentacion` conservan avances reales. La rama `fix/validacion-dtos` registra la corrección detectada en las primeras pruebas. La rama `release/1.0.0` prepara la entrega después de la prueba real; falta completar el informe, merge a main, tag `v1.0.0` y retorno a develop.
+`main` contiene la versión de entrega; `develop` integra el trabajo y las ramas `feature/backend-crud`, `feature/gateway-docker` y `feature/documentacion` conservan avances reales. La rama `fix/validacion-dtos` registra la corrección detectada en las primeras pruebas. La rama `release/1.0.0` incorpora el informe y la verificación después de la prueba real. El cierre integra la release a main, etiqueta `v1.0.0` e integra nuevamente en develop.
 
 No use solo “Upload files” de GitHub: eso perdería el grafo local. Cree en GitHub un repositorio **público vacío**, sin README, licencia ni .gitignore iniciales. Luego, usando la URL real que GitHub muestre:
 ```powershell
@@ -135,7 +142,7 @@ git push -u origin develop
 git push origin --all
 git push origin --tags
 ```
-La URL anterior es un marcador de instrucción que debe sustituirse. La autenticación de GitHub se realiza en su equipo; no incluya tokens en archivos ni mensajes.
+La URL anterior es un marcador de instrucción que debe sustituirse. La autenticación de GitHub se realiza en su equipo; no incluya tokens en archivos ni mensajes. Para el repositorio preparado en esta entrega, `scripts/publicar.ps1` utiliza la URL mostrada por el autor y publica main, develop, las otras ramas y las etiquetas sin reescribir el historial remoto.
 
 ## Entrega Moodle
 Subir enlace público al repositorio e informe PDF de 5 a 8 páginas con descripción del negocio, C4 niveles 1 y 2, endpoints y capturas reales de Swagger y Docker. La matriz de revisión se encuentra en [docs/rubrica.md](docs/rubrica.md).
@@ -147,4 +154,4 @@ Subir enlace público al repositorio e informe PDF de 5 a 8 páginas con descrip
 - Proveedor PostgreSQL EF Core: https://www.nuget.org/packages/Npgsql.EntityFrameworkCore.PostgreSQL/8.0.10
 
 ## Estado actual
-Código compilado y ejecutado mediante Docker en el equipo del autor. Las 24 comprobaciones de integración finalizaron correctamente, incluido rate limiting (68 respuestas 429 en 100 solicitudes concurrentes). Véase [docs/verificacion.md](docs/verificacion.md). Pendientes: capturas finales, PDF, cierre de release, repositorio público y entrega en Moodle.
+Código compilado y ejecutado mediante Docker en el equipo del autor. Las 24 comprobaciones de integración finalizaron correctamente, incluido rate limiting (68 respuestas 429 en 100 solicitudes concurrentes). Véase [docs/verificacion.md](docs/verificacion.md). El [informe PDF de siete páginas](docs/Informe_Inventario_Deportivo.pdf) incluye C4, contratos y capturas originales. Pendientes operativos: ejecutar y verificar la publicación remota, y realizar la entrega en Moodle. La copia local y sus ramas quedan preparadas para esa publicación.

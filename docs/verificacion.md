@@ -19,5 +19,5 @@ La captura de arranque enviada por el autor muestra los tres servicios saludable
 ## Límites de esta verificación
 - La prueba de persistencia reinicia backend; no elimina ni recrea PostgreSQL ni su volumen.
 - La compilación mostró una advertencia CS9107 sobre la captura de DbContext en el repositorio derivado. No impidió compilar ni ejecutar las pruebas.
-- Faltan capturas finales de Swagger, generación del PDF, publicación del repositorio y entrega Moodle.
+- Se incorporaron las capturas originales de Swagger (201, categoría ID 4) y Docker al PDF de siete páginas. Faltan verificación de la publicación remota y entrega Moodle.
 - Esta verificación documenta resultados observados; no representa una calificación asignada por el docente.
